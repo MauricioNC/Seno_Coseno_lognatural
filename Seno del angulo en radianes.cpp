@@ -11,9 +11,9 @@ float factorial (float cont);
 
 int main ()
 {
-	int opc; // se guarda aquí la opción para el menú.
-	int x; // Se guarda el valor del ángulo que el usuario ingrese.
-	int rep; // Número de repeticiones de la serie que hará el programa.
+	int opc; // se guarda aquÃ­ la opciÃ³n para el menÃº.
+	int x; // Se guarda el valor del Ã¡ngulo que el usuario ingrese.
+	int rep; // NÃºmero de repeticiones de la serie que harÃ¡ el programa.
 	
 	cout << "El presente programa calcula la aproximacion del angulo de seno, coseno o logaritmo natural en radianes.\nPor favor elige una de las "<<
 	"siguientes opciones: " << endl << endl;
@@ -55,11 +55,9 @@ int main ()
 					cout << "\tEl Logaritmo natural del angulo " << x << " es: " << CalcularLogna(x, rep);
 					break;
 			default: if (opc != 0)
-					 {
-						cout << "\n\tEsa opcion no es valida, intenta de nuevo!" << endl;
-					 }
-					 else
-					 	cout << "Doble enter para salir.";
+					cout << "\n\tEsa opcion no es valida, intenta de nuevo!" << endl;
+				 else
+					cout << "Doble enter para salir.";
 		}
 		getch();	
 	}while(opc != 0);
@@ -71,12 +69,10 @@ float CalcularSeno(int x, int rep)
 {
 	float suma = 0;
 	for (int i = 1; i <= rep; i++)
-	{
 		if (i % 2 != 0)
 			suma+= ((float)potencia(x, i*2.0-1) / factorial (i * 2.0 - 1));
 		else 
 			suma-= ((float)potencia(x, i*2.0-1) / factorial (i * 2.0 - 1));
-	}
 	return suma;
 }
 
@@ -85,12 +81,10 @@ float CalcularCoseno (int x, int rep)
 	float suma = 0;
 	float signo = -1.0;
 	for (int i = 0; i < rep; i++)
-	{
 		if (i % 2 == 0)
 			suma+= ((float)potencia(x, i*2.0) / factorial (i*2.0));
 		else
 			suma-= ((float)potencia(x, i*2.0) / factorial (i*2.0));
-	}
 	return suma;
 }
 
@@ -116,9 +110,7 @@ float factorial (float cont)
 	if (cont == 0)
 		return 1;
 	else
-	{
 		for (int i = 1; i <= cont; i++)
 			fact *= i;
-	}
 	return fact;
 }
